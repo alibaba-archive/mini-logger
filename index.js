@@ -107,6 +107,7 @@ Logger.prototype._write = function (category, msg) {
 
   // write to stdout
   if (this._options.stdout) {
+    msg = '[' + category + '] ' + msg;
     if (this._options.encoding !== 'utf-8') {
       msg = require('iconv-lite').encode(msg, this._options.encoding);
     }

@@ -1,6 +1,6 @@
 {
   "name": "mini-logger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A really simple logger for web server or others",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,10 @@
     "stream",
     "file"
   ],
-  "repo": "node-modules/mini-logger",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:node-modules/mini-logger.git"
+  },
   "author": "dead_horse <dead_horse@qq.com>",
   "license": "MIT",
   "devDependencies": {
