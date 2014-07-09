@@ -17,6 +17,10 @@ var copy = require('copy-to');
 var util = require('util');
 var ms = require('ms');
 
+var defer = typeof setImediate === 'function'
+  ? setImediate
+  : process.nextTick;
+
 /**
  * Expose `Logger`
  */
@@ -58,7 +62,7 @@ function Logger(options) {
   this._init();
 }
 
-Logger.prototype.__proto__ = EventEmitter;
+util.inherits(Logger, EventEmitter);
 
 Logger.prototype._init = function() {
   var ctx = this;
@@ -70,7 +74,7 @@ Logger.prototype._init = function() {
         ? msg = ctx._options.errorFormater(msg)
         : util.format.apply(util, arguments);
       ctx._write(category, msg);
-    }
+    };
   });
   this._streams = {};
 
@@ -88,8 +92,12 @@ Logger.prototype._init = function() {
       encoding: ctx._options.encoding
     });
 
-    stream.on('error', onerror);
+    stream.on('error', ctx.emit.bind(ctx, 'error'));
     ctx._streams[category] = stream;
+  });
+
+  defer(function () {
+    if (!ctx.listeners('error').length) ctx.on('error', onerror);
   });
 };
 
