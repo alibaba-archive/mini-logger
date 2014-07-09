@@ -1,7 +1,7 @@
 {
-  "name": "simplified-logger",
-  "version": "0.0.0",
-  "description": "a very simple logger, for error or custom logs.",
+  "name": "mini-logger",
+  "version": "0.1.0",
+  "description": "A really simple logger for web server or others",
   "main": "index.js",
   "scripts": {
     "test": "make test"
@@ -13,6 +13,7 @@
     "stream",
     "file"
   ],
+  "repo": "node-modules/mini-logger",
   "author": "dead_horse <dead_horse@qq.com>",
   "license": "MIT",
   "devDependencies": {
