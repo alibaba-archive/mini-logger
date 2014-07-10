@@ -1,7 +1,7 @@
 mini-logger
 ------------
 
-![travis-ci](https://travis-ci.org/node-modules/mini-logger.svg?branch=master)
+[![travis-ci](https://travis-ci.org/node-modules/mini-logger.svg?branch=master)](https://travis-ci.org/node-modules/mini-logger)
 
 A really simple logger for web server or others.
 
