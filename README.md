@@ -13,7 +13,7 @@ npm install mini-logger
 
 ## Goal
 
-Log levels for logger is useless. Just let [debug](https://github.com/visionmedia/debug) module handle the debug log. All you need is error log and some custom categories. `mini-logger` just write logs into different files or stdout, do not care about formats(except Error).
+Log levels for logger is useless. Just let [debug](https://github.com/visionmedia/debug) module handle the debug log. All you need is error log and some custom categories. `mini-logger` just write logs into different files or stdout, do not care formats(only format Errors and Objects).
 
 ## Features
 
@@ -21,6 +21,7 @@ Log levels for logger is useless. Just let [debug](https://github.com/visionmedi
 * easy to extended
 * custom categories
 * encoding support
+* support Error / Object format
 
 ## Usage
 

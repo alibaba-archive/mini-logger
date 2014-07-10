@@ -72,7 +72,10 @@ Logger.prototype._init = function() {
     ctx[category] = function (msg) {
       msg = (msg instanceof Error)
         ? msg = ctx._options.errorFormater(msg)
+        : typeof msg === 'object'
+        ? JSON.stringify(msg)
         : util.format.apply(util, arguments);
+
       ctx._write(category, msg);
     };
   });

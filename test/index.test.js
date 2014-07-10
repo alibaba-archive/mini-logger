@@ -79,6 +79,20 @@ describe('mini-loger', function () {
       }, 100);
     });
 
+    it('should format object ok', function (done) {
+      var logger = Logger({
+        dir: logdir,
+        categories: ['json']
+      });
+      logger.json({foo: 'bar'});
+      logger.flush();
+      setTimeout(function () {
+        var content = fs.readFileSync(logger.getPath('json'), 'utf-8');
+        content.should.equal('{"foo":"bar"}');
+        done();
+      }, 100);
+    });
+
     describe('encoding support', function () {
       it('should gbk ok', function (done) {
         var logger = Logger({
