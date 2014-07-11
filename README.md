@@ -48,6 +48,7 @@ logger.http('http request url: %s', 'https://github.com');
 * **stdout**: write logs into stdout, default is `false`
 * **file**: write logs into file, default is `true`
 * **errorFormater**: formater for errors, default is [error-formater](https://github.com/node-modules/error-formater)
+* **seperator**: the seperator of each line of logs, default is `os.EOL + os.EOL`
 * **encoding**: output logs' encoding, default is `utf-8`
 * **flushInterval**: all logs will cache in memory first, every `flushInterval` ms flush into files. default is `1s`
 * **duration**: cut the logs every `duration` ms. default is `1h`

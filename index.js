@@ -16,10 +16,13 @@ var formater = require('error-formater');
 var copy = require('copy-to');
 var util = require('util');
 var ms = require('ms');
+var os = require('os');
 
 var defer = typeof setImediate === 'function'
   ? setImediate
   : process.nextTick;
+
+var SEPERATOR = os.EOL + os.EOL;
 
 /**
  * Expose `Logger`
@@ -32,7 +35,8 @@ var defaultOptions = {
   format: '[{category}.]YYYY-MM-DD[.log]',
   stdout: false,
   file: true,
-  errorFormater: formater
+  errorFormater: formater,
+  seperator: SEPERATOR
 }
 
 function Logger(options) {
@@ -75,6 +79,7 @@ Logger.prototype._init = function() {
         : typeof msg === 'object'
         ? JSON.stringify(msg)
         : util.format.apply(util, arguments);
+      msg += ctx._options.seperator;
 
       ctx._write(category, msg);
     };

@@ -26,11 +26,11 @@
     "mm": "~0.2.1",
     "mocha": "^1.20.1",
     "rimraf": "~2.2.8",
-    "should": "^4.0.4"
+    "should": "~4.0.4"
   },
   "dependencies": {
     "copy-to": "~1.0.1",
-    "error-formater": "~1.0.1",
+    "error-formater": "~1.0.3",
     "iconv-lite": "~0.4.3",
     "logfilestream": "~0.1.3",
     "ms": "~0.6.2"
