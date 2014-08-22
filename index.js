@@ -12,7 +12,7 @@
 
 var EventEmitter = require('events').EventEmitter;
 var logfilestream = require('logfilestream');
-var formater = require('error-formater');
+var formatter = require('error-formatter');
 var copy = require('copy-to');
 var util = require('util');
 var ms = require('ms');
@@ -35,7 +35,7 @@ var defaultOptions = {
   format: '[{category}.]YYYY-MM-DD[.log]',
   stdout: false,
   file: true,
-  errorFormater: formater,
+  errorFormatter: formatter,
   seperator: SEPERATOR
 }
 
@@ -75,7 +75,7 @@ Logger.prototype._init = function() {
   this._options.categories.forEach(function (category) {
     ctx[category] = function (msg) {
       msg = (msg instanceof Error)
-        ? msg = ctx._options.errorFormater(msg)
+        ? msg = ctx._options.errorFormatter(msg)
         : typeof msg === 'object'
         ? JSON.stringify(msg)
         : util.format.apply(util, arguments);

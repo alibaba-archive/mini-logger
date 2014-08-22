@@ -15,7 +15,6 @@ var mkdirp = require('mkdirp');
 var fs = require('fs');
 var rm = require('rimraf');
 var path = require('path');
-var errorFormater = require('error-formater');
 var iconv = require('iconv-lite');
 var should = require('should');
 
