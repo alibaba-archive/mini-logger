@@ -32,8 +32,9 @@
     "copy-to": "~1.0.1",
     "error-formatter": "~1.0.3",
     "iconv-lite": "~0.4.4",
-    "logfilestream": "~0.1.3",
-    "ms": "~0.6.2"
+    "logfilestream": "~1.0.1",
+    "ms": "~0.6.2",
+    "sdk-base": "~1.0.0"
   },
   "files": [
     "index.js"

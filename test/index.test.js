@@ -34,6 +34,9 @@ describe('mini-loger', function () {
     it('should throw', function () {
       (function () {
         Logger();
+      }).should.throw('options required');
+      (function () {
+        Logger({});
       }).should.throw('options.dir required');
     });
   });

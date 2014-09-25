@@ -10,17 +10,14 @@
  * Module dependencies.
  */
 
-var EventEmitter = require('events').EventEmitter;
 var logfilestream = require('logfilestream');
 var formatter = require('error-formatter');
+var Base = require('sdk-base');
+var assert = require('assert');
 var copy = require('copy-to');
 var util = require('util');
 var ms = require('ms');
 var os = require('os');
-
-var defer = typeof setImediate === 'function'
-  ? setImediate
-  : process.nextTick;
 
 var SEPERATOR = os.EOL + os.EOL;
 
@@ -42,7 +39,9 @@ var defaultOptions = {
 function Logger(options) {
   if (!(this instanceof Logger)) return new Logger(options);
 
-  if (!options || !options.dir) throw new Error('options.dir required');
+  assert(options, 'options required');
+  assert(options.dir, 'options.dir required');
+  Base.call(this);
 
   this._options = {};
   copy(options).and(defaultOptions).to(this._options);
@@ -66,7 +65,7 @@ function Logger(options) {
   this._init();
 }
 
-util.inherits(Logger, EventEmitter);
+util.inherits(Logger, Base);
 
 Logger.prototype._init = function() {
   var ctx = this;
@@ -102,10 +101,6 @@ Logger.prototype._init = function() {
 
     stream.on('error', ctx.emit.bind(ctx, 'error'));
     ctx._streams[category] = stream;
-  });
-
-  defer(function () {
-    if (!ctx.listeners('error').length) ctx.on('error', onerror);
   });
 };
 
@@ -157,10 +152,6 @@ Logger.prototype._destory = function (category) {
   this._streams[category].removeAllListeners();
   this._streams[category] = null;
 };
-
-function onerror(err) {
-  console.error(err.stack);
-}
 
 function uniq(categories) {
   var res = {};
