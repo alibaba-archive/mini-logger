@@ -108,6 +108,7 @@ Logger.prototype._write = function (category, msg) {
   // write to file
   if (this._options.file && this._streams[category]) this._streams[category].write(msg);
 
+  /* istanbul ignore next */
   // write to stdout
   if (this._options.stdout) {
     msg = '[' + category + '] ' + msg;

@@ -1,7 +1,28 @@
 mini-logger
 ------------
 
-[![travis-ci](https://travis-ci.org/node-modules/mini-logger.svg?branch=master)](https://travis-ci.org/node-modules/mini-logger)
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![Coveralls][coveralls-image]][coveralls-url]
+[![David deps][david-image]][david-url]
+[![node version][node-image]][node-url]
+[![npm download][download-image]][download-url]
+[![Gittip][gittip-image]][gittip-url]
+
+[npm-image]: https://img.shields.io/npm/v/mini-logger.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/mini-logger
+[travis-image]: https://img.shields.io/travis/node-modules/mini-logger.svg?style=flat-square
+[travis-url]: https://travis-ci.org/node-modules/mini-logger
+[coveralls-image]: https://img.shields.io/coveralls/node-modules/mini-logger.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/node-modules/mini-logger?branch=master
+[david-image]: https://img.shields.io/david/node-modules/mini-logger.svg?style=flat-square
+[david-url]: https://david-dm.org/node-modules/mini-logger
+[node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
+[node-url]: http://nodejs.org/download/
+[download-image]: https://img.shields.io/npm/dm/mini-logger.svg?style=flat-square
+[download-url]: https://npmjs.org/package/mini-logger
+[gittip-image]: https://img.shields.io/gittip/dead-horse.svg?style=flat-square
+[gittip-url]: https://www.gittip.com/dead-horse/
 
 A really simple logger for web server or others.
 
