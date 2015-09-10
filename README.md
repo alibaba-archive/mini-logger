@@ -54,7 +54,7 @@ var Logger = require('mini-logger');
 var logger = Logger({
   dir: path.join(__dirname, 'logs'),
   categories: [ 'http' ],
-  format: '[{category.}]YYYY-MM-DD[.log]'
+  format: '[{category}.]YYYY-MM-DD[.log]'
 });
 
 logger.error(new Error('error'));
