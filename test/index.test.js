@@ -175,4 +175,20 @@ describe('mini-loger', function () {
       should.not.exist(logger._streams.error);
     });
   });
+
+   describe('Logger.timestamp', function () {
+     it('should exist timestamp ', function () {
+       var logger = Logger({dir: logdir, timestamp: true, categories:['timestamp']});
+       logger.timestamp('logtext with timestamp');
+       logger.flush('timestamp');
+       var patt = /\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3} logtext with timestamp/g;
+        setTimeout(function () {
+          var content = fs.readFileSync(logger.getPath('timestamp'), 'utf-8');
+          var match = patt.exec(content);
+          shoudl.notEqual(match, null);
+          done();
+        }, 100);
+     });
+   });
+
 });
