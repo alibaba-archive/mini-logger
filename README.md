@@ -74,6 +74,7 @@ logger.http('http request url: %s', 'https://github.com');
 * **flushInterval**: all logs will cache in memory first, every `flushInterval` ms flush into files. default is `1s`
 * **duration**: cut the logs every `duration` ms. default is `1h`
 * **mkdir**: everytime before create a writeStream, will try to `mkdirp` first. useful when format is like `YYYY/MM/DD/[{category}.log]`, default to false
+* **timestamp**: write timestamp with format YYYYMMDDHHmmssSSS before every line of logs, default is false
 
 ### Events
 

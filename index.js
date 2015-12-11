@@ -18,8 +18,10 @@ var copy = require('copy-to');
 var util = require('util');
 var ms = require('ms');
 var os = require('os');
+var YYYYMMDDHHmmssSSS = require('utility').YYYYMMDDHHmmssSSS;
 
 var SEPERATOR = os.EOL + os.EOL;
+
 
 /**
  * Expose `Logger`
@@ -33,7 +35,8 @@ var defaultOptions = {
   stdout: false,
   file: true,
   errorFormatter: formatter,
-  seperator: SEPERATOR
+  seperator: SEPERATOR,
+  timestamp: false
 }
 
 function Logger(options) {
@@ -105,8 +108,12 @@ Logger.prototype._init = function() {
 };
 
 Logger.prototype._write = function (category, msg) {
+  var now = '';
+  if (this._options.timestamp) {
+    now = YYYYMMDDHHmmssSSS() + ' ';
+  }
   // write to file
-  if (this._options.file && this._streams[category]) this._streams[category].write(msg);
+  if (this._options.file && this._streams[category]) this._streams[category].write(now + msg);
 
   /* istanbul ignore next */
   // write to stdout
@@ -117,8 +124,8 @@ Logger.prototype._write = function (category, msg) {
     }
 
     category === 'error'
-      ? process.stderr.write(msg)
-      : process.stdout.write(msg);
+      ? process.stderr.write(now + msg)
+      : process.stdout.write(now + msg);
   }
 };
 

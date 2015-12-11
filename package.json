@@ -29,6 +29,7 @@
     "should": "~4.0.4"
   },
   "dependencies": {
+    "utility": "~1.6.0",
     "copy-to": "~1.0.1",
     "error-formatter": "~1.0.3",
     "iconv-lite": "~0.4.4",
