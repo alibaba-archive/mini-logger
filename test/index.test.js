@@ -1,14 +1,4 @@
-/*!
- * mini-logger - index.test.js
- * Copyright(c) 2014 dead_horse <dead_horse@qq.com>
- * MIT Licensed
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var Logger = require('..');
 var mkdirp = require('mkdirp');
@@ -76,7 +66,7 @@ describe('mini-loger', function () {
       logger.flush();
       setTimeout(function () {
         var content = fs.readFileSync(logger.getPath('string'), 'utf-8');
-        content.should.eql('test for ["item","item"]\n\n');
+        content.should.equal('test for ["item","item"]\n\n');
         done();
       }, 100);
     });
@@ -107,7 +97,7 @@ describe('mini-loger', function () {
         logger.flush();
         setTimeout(function () {
           var content = iconv.decode(fs.readFileSync(logger.getPath('gbk')), 'gbk');
-          content.should.eql('中文\n\n');
+          content.should.equal('中文\n\n');
           done();
         }, 100);
       });
