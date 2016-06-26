@@ -1,14 +1,4 @@
-/*!
- * mini-logger - index.js
- * Copyright(c) 2014 dead_horse <dead_horse@qq.com>
- * MIT Licensed
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var logfilestream = require('logfilestream');
 var formatter = require('error-formatter');
@@ -21,7 +11,6 @@ var os = require('os');
 var YYYYMMDDHHmmssSSS = require('utility').YYYYMMDDHHmmssSSS;
 
 var SEPERATOR = os.EOL + os.EOL;
-
 
 /**
  * Expose `Logger`

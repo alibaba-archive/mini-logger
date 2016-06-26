@@ -1,14 +1,11 @@
 TESTS = test/*.test.js
-REPORTER = tap
+REPORTER = spec
 TIMEOUT = 3000
 MOCHA_OPTS =
 
-install:
-	@npm install --registry=http://registry.npm.taobao.org
-
 test:
 	@NODE_ENV=test ./node_modules/mocha/bin/mocha \
-		--harmony-generators \
+		--harmony \
 		--reporter $(REPORTER) \
 		--timeout $(TIMEOUT) \
 		--require should \
@@ -37,9 +34,5 @@ test-travis:
 		--require should \
 		$(MOCHA_OPTS) \
 		$(TESTS)
-
-autod:
-	@./node_modules/.bin/autod -w -e example.js --prefix=~
-	@$(MAKE) install
 
 .PHONY: test

@@ -5,9 +5,8 @@ mini-logger
 [![build status][travis-image]][travis-url]
 [![Coveralls][coveralls-image]][coveralls-url]
 [![David deps][david-image]][david-url]
-[![node version][node-image]][node-url]
+[![Known Vulnerabilities][snyk-image]][snyk-url]
 [![npm download][download-image]][download-url]
-[![Gittip][gittip-image]][gittip-url]
 
 [npm-image]: https://img.shields.io/npm/v/mini-logger.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/mini-logger
@@ -17,18 +16,16 @@ mini-logger
 [coveralls-url]: https://coveralls.io/r/node-modules/mini-logger?branch=master
 [david-image]: https://img.shields.io/david/node-modules/mini-logger.svg?style=flat-square
 [david-url]: https://david-dm.org/node-modules/mini-logger
-[node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
-[node-url]: http://nodejs.org/download/
+[snyk-image]: https://snyk.io/test/npm/mini-logger/badge.svg?style=flat-square
+[snyk-url]: https://snyk.io/test/npm/mini-logger
 [download-image]: https://img.shields.io/npm/dm/mini-logger.svg?style=flat-square
 [download-url]: https://npmjs.org/package/mini-logger
-[gittip-image]: https://img.shields.io/gittip/dead-horse.svg?style=flat-square
-[gittip-url]: https://www.gittip.com/dead-horse/
 
 A really simple logger for web server or others.
 
 ## Install
 
-```
+```bash
 npm install mini-logger
 ```
 
@@ -80,7 +77,7 @@ logger.http('http request url: %s', 'https://github.com');
 
 Logger will emit an error event when any write streams emit an error. If you don't listen this `error` event, it will default hanlde by:
 
-```
+```js
 function onerror(err) {
   console.error(err.stack);
 }
@@ -88,4 +85,4 @@ function onerror(err) {
 
 ## License
 
-MIT
+[MIT](LICENSE)
