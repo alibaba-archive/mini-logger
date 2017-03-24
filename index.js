@@ -32,12 +32,15 @@ function Logger(options) {
   if (!(this instanceof Logger)) return new Logger(options);
 
   assert(options, 'options required');
-  assert(options.dir, 'options.dir required');
   Base.call(this);
 
   this._options = {};
   copy(options).and(defaultOptions).to(this._options);
   options = this._options;
+
+  if (options.file) {
+    assert(options.dir, 'options.dir required');
+  }
 
   if (!Array.isArray(options.categories)) options.categories = [ options.categories ];
   options.categories.push('error');

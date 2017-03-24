@@ -29,6 +29,12 @@ describe('mini-loger', function () {
         Logger({});
       }).should.throw('options.dir required');
     });
+
+    it('should ok', function () {
+        Logger({
+          file: false
+        });
+    });
   });
 
   describe('with file = false', function () {
