@@ -33,7 +33,7 @@
     "error-formatter": "^1.0.3",
     "iconv-lite": "~0.4.4",
     "logfilestream": "^1.0.1",
-    "ms": "^0.7.1",
+    "ms": "^2.0.0",
     "sdk-base": "^1.0.0"
   },
   "files": [
